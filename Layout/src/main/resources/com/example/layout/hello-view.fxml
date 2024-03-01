@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.layout.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <HBox>
+        <Button text="Button 1">
+            <graphic>
+                <ImageView>
+                    <Image url="@/toolbarButtonGraphics/general/TipOfTheDay16.gif"/>
+                </ImageView>
+            </graphic>
+        </Button>
+            <Label text="This is a  label" textFill="blue">
+                <font>
+                    <Font name="Arial italic" size="12"/>
+                </font>
+                <graphic>
+                    <ImageView>
+                        <Image url="@/toolbarButtonGraphics/general/Information24.gif"/>
+                    </ImageView>
+                </graphic>
+            </Label>
+    </HBox>
+    <fx:define>
+        <ToggleGroup fx:id="colorToggleGroup"/>
+    </fx:define>
+    <HBox>
+        <RadioButton text="Red" toggleGroup="$colorToggleGroup"/>
+        <RadioButton text="Blue" toggleGroup="$colorToggleGroup" selected="true"/>
+        <RadioButton text="Green" toggleGroup="$colorToggleGroup"/>
+    </HBox>
+    <HBox>
+        <CheckBox text="Subscribe to our newsletter"/>
+    </HBox>
+    <TextField/>
+    <PasswordField/>
+    <ComboBox>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Option 1"/>
+                <String fx:value="Option 2"/>
+                <String fx:value="Option 3"/>
+                <String fx:value="Option 4"/>
+                <String fx:value="Option 5"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="Option 1"/>
+        </value>
+    </ComboBox>
+    <ChoiceBox>
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Option 1"/>
+                <String fx:value="Option 2"/>
+                <String fx:value="Option 3"/>
+                <String fx:value="Option 4"/>
+                <String fx:value="Option 5"/>
+            </FXCollections>
+        </items>
+        <value>
+            <String fx:value="Option 1"/>
+        </value>
+    </ChoiceBox>
+    <Slider  showTickMarks="true" minorTickCount="4" snapToTicks="true" showTickLabels="true"/>
+    <Spinner min="0" max="100" editable="true" initialValue="50"/>
+    <HBox>
+        <ColorPicker/>
+        <DatePicker/>
+    </HBox>
+    <Accordion expandedPane="$tp1">
+        <panes>
+            <TitledPane fx:id="tp1" text="Title Pane">
+                <Label text="This Is A Pane"/>
+            </TitledPane>
+            <TitledPane text="Title Pane">
+                <Label text="This Is A Pane"/>
+            </TitledPane>
+            <TitledPane text="Title Pane">
+                <Label text="This Is A Pane"/>
+            </TitledPane>
+        </panes>
+    </Accordion>
+   </VBox>
